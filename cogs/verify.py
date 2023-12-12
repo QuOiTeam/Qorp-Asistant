@@ -12,7 +12,7 @@ class VerifyModal(disnake.ui.Modal):
 
     async def callback(self, interaction: disnake.ModalInteraction) -> None:
         if self.code == int(interaction.text_values["code"]):
-            role = interaction.guild.get_role(1184196593843437628) # Роль неверифицированного
+            role = interaction.guild.get_role(...) # Роль неверифицированного
             await interaction.author.remove_roles(role)
             await interaction.response.send_message("Вы успешно прошли верификацию!", ephemeral=True)
         else:
@@ -46,7 +46,7 @@ class Verify(commands.Cog):
         if self.persistents_views_added:
             return
 
-        self.bot.add_view(ButtonView(), message_id=1184196520233422880)
+        self.bot.add_view(ButtonView(), message_id=...)
 
 def setup(bot):
     bot.add_cog(Verify(bot))
