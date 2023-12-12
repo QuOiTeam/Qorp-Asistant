@@ -29,7 +29,7 @@ class RecruitementModal(disnake.ui.Modal):
                             f"Если вы нам **подходите**, администрация **свяжется** с вами в ближайшее время."
         embed.set_thumbnail(url=interaction.author.display_avatar.url)
         await interaction.response.send_message(embed=embed, ephemeral=True)
-        channel = interaction.guild.get_channel(1150101252261290160)  #ID канала куда будут отправляться заявки
+        channel = interaction.guild.get_channel(...)  #ID канала куда будут отправляться заявки
         await channel.send(f"**Заявка на роль {self.arg}** от {interaction.author.mention}\n **Настоящее имя** - {name} **({age} лет)**\n **Резюме:**\n *{why_you}*")
         
 
@@ -70,7 +70,7 @@ class Recruitement(commands.Cog):
         view = disnake.ui.View(timeout=None)
         view.add_item(RecruitementSelect())
         self.bot.add_view(view,
-                          message_id="1184078921730375680")  # Вставить ID сообщения, которое отправится после использования с команда !recruit
+                          message_id="...")  # Вставить ID сообщения, которое отправится после использования с команда !recruit
 
 
 def setup(bot):
