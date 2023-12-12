@@ -1,1 +1,2 @@
 # Впиши сюда токен твоего бота!
+# Enter your bot's token here!
